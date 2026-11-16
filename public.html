@@ -23,7 +23,6 @@
     .form-status.show { display: block; }
     .form-status.success { background: #e6f6e6; color: #2e8b1e; border: 1px solid #cceccc; }
     .form-status.error { background: #fdf0f0; color: #d32f2f; border: 1px solid #fadcdc; }
-    /* Ensure contact grid forces proper side-by-side display */
     .contact { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: start; }
     @media (max-width: 900px) { .contact { grid-template-columns: 1fr; } }
   </style>
@@ -117,7 +116,6 @@
 
   <script src="app.js"></script>
   
-  <!-- Inline Form Handler to bypass cache issues -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const oldForm = document.getElementById('quoteForm');
