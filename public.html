@@ -96,7 +96,9 @@
             </a>
           </div>
 
-          <form class="card reveal" id="quoteForm" style="--d:.1s">
+          <form class="card reveal" id="quoteForm" action="https://api.web3forms.com/submit" method="POST" style="--d:.1s">
+            <input type="hidden" name="access_key" value="77f35ddc-5592-46ef-8d63-d40c56bdd4ff">
+            
             <div class="row">
               <div class="field"><input id="name" name="name" required placeholder=" "><label for="name">Full name</label></div>
               <div class="field"><input id="company" name="company" placeholder=" "><label for="company">Company</label></div>
@@ -115,6 +117,10 @@
               <label for="interest">I'm interested in</label>
             </div>
             <div class="field"><textarea id="msg" name="message" required placeholder=" "></textarea><label for="msg">Products, quantities or details you need</label></div>
+            
+            <!-- Honeypot spam protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
             <button type="submit" class="btn btn-primary magnetic">Send Inquiry <span class="arrow">→</span></button>
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
             <p class="form-note">We usually respond within one business day.</p>
