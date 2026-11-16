@@ -23,6 +23,9 @@
     .form-status.show { display: block; }
     .form-status.success { background: #e6f6e6; color: #2e8b1e; border: 1px solid #cceccc; }
     .form-status.error { background: #fdf0f0; color: #d32f2f; border: 1px solid #fadcdc; }
+    /* Ensure contact grid forces proper side-by-side display */
+    .contact { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: start; }
+    @media (max-width: 900px) { .contact { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -69,10 +72,10 @@
 
         <div class="contact">
           <div class="info">
-            <div class="card reveal">
+            <div class="card reveal" style="margin-bottom: 20px;">
               <div><h4>Main Office</h4><p>JJAS Bldg., Santan St., Purok 7, Poblacion Ising, Carmen, Davao del Norte, 8101</p></div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" style="margin-bottom: 20px;">
               <div><h4>Mobile</h4><p><a href="tel:+639178995891">0917 899 5891</a></p></div>
             </div>
             <div class="card reveal">
@@ -109,7 +112,7 @@
               <input type="file" id="attachment" name="attachment" accept=".pdf" style="padding: 10px 0;">
             </div>
 
-            <button type="submit" class="btn btn-primary magnetic">Send Inquiry <span class="arrow">→</span></button>
+            <button type="submit" class="btn btn-primary magnetic" style="margin-top: 15px;">Send Inquiry <span class="arrow">→</span></button>
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </form>
         </div>
@@ -126,7 +129,6 @@
       const formStatus = document.getElementById('formStatus');
       
       if (oldForm) {
-        // Clone the form to strip any old mailto: events attached by app.js
         const newForm = oldForm.cloneNode(true);
         oldForm.parentNode.replaceChild(newForm, oldForm);
         
